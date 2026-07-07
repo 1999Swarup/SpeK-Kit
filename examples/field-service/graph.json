@@ -1,0 +1,603 @@
+{
+  "nodes": [
+    {
+      "id": "CAP-iot-ingest",
+      "type": "Capability",
+      "title": "IoT telemetry ingestion and evaluation",
+      "status": "accepted",
+      "confidence": "med",
+      "path": "capabilities\\CAP-iot-ingest.md"
+    },
+    {
+      "id": "CAP-offline-sync",
+      "type": "Capability",
+      "title": "Offline-capable mobile data with sync",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "capabilities\\CAP-offline-sync.md"
+    },
+    {
+      "id": "CAP-scheduling",
+      "type": "Capability",
+      "title": "Automated resource scheduling",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "capabilities\\CAP-scheduling.md"
+    },
+    {
+      "id": "CAP-workorder",
+      "type": "Capability",
+      "title": "Work order management on Dataverse",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "capabilities\\CAP-workorder.md"
+    },
+    {
+      "id": "CS-FS-001",
+      "type": "CurrentState",
+      "title": "Scheduling today is manual on a dispatcher whiteboard/board",
+      "status": "observed",
+      "confidence": "high",
+      "path": "current-state\\CS-FS-001.md"
+    },
+    {
+      "id": "D-FS-001",
+      "type": "Decision",
+      "title": "Use Resource Scheduling Optimization instead of a custom scheduler",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "decisions\\D-FS-001.md"
+    },
+    {
+      "id": "D-FS-002",
+      "type": "Decision",
+      "title": "Use Azure IoT Hub + Functions for Connected Field Service ingestion",
+      "status": "accepted",
+      "confidence": "med",
+      "path": "decisions\\D-FS-002.md"
+    },
+    {
+      "id": "IP-FS-001",
+      "type": "IntegrationPoint",
+      "title": "Azure IoT Hub \u2192 Dataverse (Connected Field Service)",
+      "status": "planned",
+      "confidence": "med",
+      "path": "integration\\IP-FS-001.md"
+    },
+    {
+      "id": "Q-FS-301",
+      "type": "Question",
+      "title": "What telemetry threshold and dedup window trigger a predictive work order?",
+      "status": "open",
+      "confidence": "low",
+      "path": "questions\\Q-FS-301.md"
+    },
+    {
+      "id": "R-FS-001",
+      "type": "Requirement",
+      "title": "Auto-schedule work orders to the best-fit technician via Resource Scheduling Optimization",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "requirements\\R-FS-001.md"
+    },
+    {
+      "id": "R-FS-002",
+      "type": "Requirement",
+      "title": "Field technicians can view and update work orders offline, syncing on reconnect",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "requirements\\R-FS-002.md"
+    },
+    {
+      "id": "R-FS-003",
+      "type": "Requirement",
+      "title": "Equipment telemetry auto-creates predictive maintenance work orders",
+      "status": "proposed",
+      "confidence": "med",
+      "path": "requirements\\R-FS-003.md"
+    },
+    {
+      "id": "RK-FS-001",
+      "type": "Risk",
+      "title": "Offline sync conflicts cause silent data loss",
+      "status": "mitigating",
+      "confidence": "med",
+      "path": "risks\\RK-FS-001.md"
+    },
+    {
+      "id": "RK-FS-002",
+      "type": "Risk",
+      "title": "IoT false positives create noisy predictive work orders",
+      "status": "open",
+      "confidence": "med",
+      "path": "risks\\RK-FS-002.md"
+    },
+    {
+      "id": "T-FS-101",
+      "type": "Task",
+      "title": "Configure RSO scheduling parameters, constraints, and objectives",
+      "status": "in-progress",
+      "confidence": "high",
+      "path": "tasks\\T-FS-101.md"
+    },
+    {
+      "id": "T-FS-102",
+      "type": "Task",
+      "title": "Build Power Automate flow to trigger scheduling on work-order create",
+      "status": "draft",
+      "confidence": "med",
+      "path": "tasks\\T-FS-102.md"
+    },
+    {
+      "id": "T-FS-201",
+      "type": "Task",
+      "title": "Configure Field Service mobile offline profile",
+      "status": "in-progress",
+      "confidence": "high",
+      "path": "tasks\\T-FS-201.md"
+    },
+    {
+      "id": "T-FS-202",
+      "type": "Task",
+      "title": "Define and implement offline sync conflict-resolution policy",
+      "status": "draft",
+      "confidence": "med",
+      "path": "tasks\\T-FS-202.md"
+    },
+    {
+      "id": "T-FS-301",
+      "type": "Task",
+      "title": "Azure Function to evaluate telemetry and create predictive work orders",
+      "status": "draft",
+      "confidence": "low",
+      "path": "tasks\\T-FS-301.md"
+    },
+    {
+      "id": "TL-azure-functions",
+      "type": "Tool",
+      "title": "Azure Functions",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "tools\\TL-azure-functions.md"
+    },
+    {
+      "id": "TL-azure-iot-hub",
+      "type": "Tool",
+      "title": "Azure IoT Hub",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "tools\\TL-azure-iot-hub.md"
+    },
+    {
+      "id": "TL-custom-scheduler",
+      "type": "Tool",
+      "title": "Custom scheduling engine",
+      "status": "rejected",
+      "confidence": "med",
+      "path": "tools\\TL-custom-scheduler.md"
+    },
+    {
+      "id": "TL-dataverse",
+      "type": "Tool",
+      "title": "Microsoft Dataverse",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "tools\\TL-dataverse.md"
+    },
+    {
+      "id": "TL-field-service",
+      "type": "Tool",
+      "title": "Dynamics 365 Field Service",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "tools\\TL-field-service.md"
+    },
+    {
+      "id": "TL-power-automate",
+      "type": "Tool",
+      "title": "Power Automate",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "tools\\TL-power-automate.md"
+    },
+    {
+      "id": "TL-powerapps-mobile",
+      "type": "Tool",
+      "title": "Field Service Mobile (Power Apps)",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "tools\\TL-powerapps-mobile.md"
+    },
+    {
+      "id": "TL-rso",
+      "type": "Tool",
+      "title": "Resource Scheduling Optimization (RSO)",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "tools\\TL-rso.md"
+    },
+    {
+      "id": "TST-FS-101",
+      "type": "Test",
+      "title": "RSO books the best-fit technician and flags when none eligible",
+      "status": "passing",
+      "confidence": "high",
+      "path": "tests\\TST-FS-101.md"
+    },
+    {
+      "id": "TST-FS-201",
+      "type": "Test",
+      "title": "Offline edits sync and conflicts resolve without data loss",
+      "status": "passing",
+      "confidence": "high",
+      "path": "tests\\TST-FS-201.md"
+    },
+    {
+      "id": "US-FS-001",
+      "type": "UserStory",
+      "title": "A dispatcher wants work orders auto-scheduled to the best-fit technician",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "stories\\US-FS-001.md"
+    },
+    {
+      "id": "US-FS-002",
+      "type": "UserStory",
+      "title": "A field technician wants to work offline in low-connectivity areas",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "stories\\US-FS-002.md"
+    },
+    {
+      "id": "US-FS-003",
+      "type": "UserStory",
+      "title": "A service manager wants predictive maintenance from equipment telemetry",
+      "status": "accepted",
+      "confidence": "med",
+      "path": "stories\\US-FS-003.md"
+    }
+  ],
+  "edges": [
+    {
+      "from": "CAP-iot-ingest",
+      "edge": "needs_tool",
+      "to": "TL-azure-iot-hub"
+    },
+    {
+      "from": "CAP-iot-ingest",
+      "edge": "needs_tool",
+      "to": "TL-azure-functions"
+    },
+    {
+      "from": "CAP-offline-sync",
+      "edge": "needs_tool",
+      "to": "TL-powerapps-mobile"
+    },
+    {
+      "from": "CAP-offline-sync",
+      "edge": "needs_tool",
+      "to": "TL-dataverse"
+    },
+    {
+      "from": "CAP-scheduling",
+      "edge": "needs_tool",
+      "to": "TL-rso"
+    },
+    {
+      "from": "CAP-scheduling",
+      "edge": "needs_tool",
+      "to": "TL-field-service"
+    },
+    {
+      "from": "CAP-workorder",
+      "edge": "needs_tool",
+      "to": "TL-dataverse"
+    },
+    {
+      "from": "CAP-workorder",
+      "edge": "needs_tool",
+      "to": "TL-field-service"
+    },
+    {
+      "from": "CS-FS-001",
+      "edge": "constrains",
+      "to": "R-FS-001"
+    },
+    {
+      "from": "CS-FS-001",
+      "edge": "traces_to",
+      "to": "R-FS-001"
+    },
+    {
+      "from": "D-FS-001",
+      "edge": "uses_tool",
+      "to": "TL-rso"
+    },
+    {
+      "from": "D-FS-001",
+      "edge": "affects",
+      "to": "R-FS-001"
+    },
+    {
+      "from": "D-FS-002",
+      "edge": "uses_tool",
+      "to": "TL-azure-iot-hub"
+    },
+    {
+      "from": "D-FS-002",
+      "edge": "uses_tool",
+      "to": "TL-azure-functions"
+    },
+    {
+      "from": "D-FS-002",
+      "edge": "affects",
+      "to": "R-FS-003"
+    },
+    {
+      "from": "IP-FS-001",
+      "edge": "depends_on",
+      "to": "TL-azure-iot-hub"
+    },
+    {
+      "from": "IP-FS-001",
+      "edge": "depends_on",
+      "to": "TL-azure-functions"
+    },
+    {
+      "from": "IP-FS-001",
+      "edge": "related_to",
+      "to": "R-FS-003"
+    },
+    {
+      "from": "Q-FS-301",
+      "edge": "blocks",
+      "to": "R-FS-003"
+    },
+    {
+      "from": "Q-FS-301",
+      "edge": "blocks",
+      "to": "T-FS-301"
+    },
+    {
+      "from": "R-FS-001",
+      "edge": "derived_from",
+      "to": "US-FS-001"
+    },
+    {
+      "from": "R-FS-002",
+      "edge": "derived_from",
+      "to": "US-FS-002"
+    },
+    {
+      "from": "R-FS-003",
+      "edge": "derived_from",
+      "to": "US-FS-003"
+    },
+    {
+      "from": "RK-FS-001",
+      "edge": "threatens",
+      "to": "R-FS-002"
+    },
+    {
+      "from": "RK-FS-001",
+      "edge": "mitigated_by",
+      "to": "T-FS-202"
+    },
+    {
+      "from": "RK-FS-002",
+      "edge": "threatens",
+      "to": "R-FS-003"
+    },
+    {
+      "from": "RK-FS-002",
+      "edge": "mitigated_by",
+      "to": "T-FS-301"
+    },
+    {
+      "from": "RK-FS-002",
+      "edge": "caused_by",
+      "to": "Q-FS-301"
+    },
+    {
+      "from": "T-FS-101",
+      "edge": "satisfies",
+      "to": "R-FS-001"
+    },
+    {
+      "from": "T-FS-101",
+      "edge": "uses_tool",
+      "to": "TL-rso"
+    },
+    {
+      "from": "T-FS-101",
+      "edge": "uses_tool",
+      "to": "TL-field-service"
+    },
+    {
+      "from": "T-FS-102",
+      "edge": "satisfies",
+      "to": "R-FS-001"
+    },
+    {
+      "from": "T-FS-102",
+      "edge": "uses_tool",
+      "to": "TL-power-automate"
+    },
+    {
+      "from": "T-FS-102",
+      "edge": "depends_on",
+      "to": "T-FS-101"
+    },
+    {
+      "from": "T-FS-201",
+      "edge": "satisfies",
+      "to": "R-FS-002"
+    },
+    {
+      "from": "T-FS-201",
+      "edge": "uses_tool",
+      "to": "TL-powerapps-mobile"
+    },
+    {
+      "from": "T-FS-201",
+      "edge": "uses_tool",
+      "to": "TL-dataverse"
+    },
+    {
+      "from": "T-FS-202",
+      "edge": "satisfies",
+      "to": "R-FS-002"
+    },
+    {
+      "from": "T-FS-202",
+      "edge": "uses_tool",
+      "to": "TL-powerapps-mobile"
+    },
+    {
+      "from": "T-FS-202",
+      "edge": "depends_on",
+      "to": "T-FS-201"
+    },
+    {
+      "from": "T-FS-301",
+      "edge": "satisfies",
+      "to": "R-FS-003"
+    },
+    {
+      "from": "T-FS-301",
+      "edge": "uses_tool",
+      "to": "TL-azure-functions"
+    },
+    {
+      "from": "T-FS-301",
+      "edge": "uses_tool",
+      "to": "TL-azure-iot-hub"
+    },
+    {
+      "from": "TL-azure-functions",
+      "edge": "provides",
+      "to": "CAP-iot-ingest"
+    },
+    {
+      "from": "TL-azure-functions",
+      "edge": "depends_on",
+      "to": "TL-azure-iot-hub"
+    },
+    {
+      "from": "TL-azure-functions",
+      "edge": "chosen_by",
+      "to": "D-FS-002"
+    },
+    {
+      "from": "TL-azure-iot-hub",
+      "edge": "provides",
+      "to": "CAP-iot-ingest"
+    },
+    {
+      "from": "TL-azure-iot-hub",
+      "edge": "chosen_by",
+      "to": "D-FS-002"
+    },
+    {
+      "from": "TL-custom-scheduler",
+      "edge": "provides",
+      "to": "CAP-scheduling"
+    },
+    {
+      "from": "TL-custom-scheduler",
+      "edge": "alternative_to",
+      "to": "TL-rso"
+    },
+    {
+      "from": "TL-dataverse",
+      "edge": "provides",
+      "to": "CAP-workorder"
+    },
+    {
+      "from": "TL-dataverse",
+      "edge": "provides",
+      "to": "CAP-offline-sync"
+    },
+    {
+      "from": "TL-field-service",
+      "edge": "provides",
+      "to": "CAP-scheduling"
+    },
+    {
+      "from": "TL-field-service",
+      "edge": "provides",
+      "to": "CAP-workorder"
+    },
+    {
+      "from": "TL-field-service",
+      "edge": "depends_on",
+      "to": "TL-dataverse"
+    },
+    {
+      "from": "TL-power-automate",
+      "edge": "provides",
+      "to": "CAP-workorder"
+    },
+    {
+      "from": "TL-power-automate",
+      "edge": "depends_on",
+      "to": "TL-dataverse"
+    },
+    {
+      "from": "TL-powerapps-mobile",
+      "edge": "provides",
+      "to": "CAP-offline-sync"
+    },
+    {
+      "from": "TL-powerapps-mobile",
+      "edge": "depends_on",
+      "to": "TL-dataverse"
+    },
+    {
+      "from": "TL-rso",
+      "edge": "provides",
+      "to": "CAP-scheduling"
+    },
+    {
+      "from": "TL-rso",
+      "edge": "depends_on",
+      "to": "TL-field-service"
+    },
+    {
+      "from": "TL-rso",
+      "edge": "alternative_to",
+      "to": "TL-custom-scheduler"
+    },
+    {
+      "from": "TL-rso",
+      "edge": "chosen_by",
+      "to": "D-FS-001"
+    },
+    {
+      "from": "TST-FS-101",
+      "edge": "verifies",
+      "to": "R-FS-001"
+    },
+    {
+      "from": "TST-FS-201",
+      "edge": "verifies",
+      "to": "R-FS-002"
+    }
+  ],
+  "stats": {
+    "total": 32,
+    "by_type": {
+      "Capability": 4,
+      "CurrentState": 1,
+      "Decision": 2,
+      "IntegrationPoint": 1,
+      "Question": 1,
+      "Requirement": 3,
+      "Risk": 2,
+      "Task": 5,
+      "Test": 2,
+      "Tool": 8,
+      "UserStory": 3
+    }
+  }
+}
