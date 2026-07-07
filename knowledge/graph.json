@@ -1,0 +1,174 @@
+{
+  "nodes": [
+    {
+      "id": "CAP-email",
+      "type": "Capability",
+      "title": "Transactional email delivery",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "capabilities\\CAP-email.md"
+    },
+    {
+      "id": "Q-0005",
+      "type": "Question",
+      "title": "What lockout threshold and duration apply after failed reset attempts?",
+      "status": "open",
+      "confidence": "low",
+      "path": "questions\\Q-0005.md"
+    },
+    {
+      "id": "R-0042",
+      "type": "Requirement",
+      "title": "Users can reset their password via a time-limited email link",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "requirements\\R-0042.md"
+    },
+    {
+      "id": "RK-0002",
+      "type": "Risk",
+      "title": "Reset tokens could be brute-forced or replayed",
+      "status": "mitigating",
+      "confidence": "med",
+      "path": "risks\\RK-0002.md"
+    },
+    {
+      "id": "T-0101",
+      "type": "Task",
+      "title": "Implement password-reset request endpoint",
+      "status": "in-progress",
+      "confidence": "high",
+      "path": "tasks\\T-0101.md"
+    },
+    {
+      "id": "T-0102",
+      "type": "Task",
+      "title": "Implement reset-confirmation endpoint",
+      "status": "draft",
+      "confidence": "med",
+      "path": "tasks\\T-0102.md"
+    },
+    {
+      "id": "TL-sendgrid",
+      "type": "Tool",
+      "title": "SendGrid",
+      "status": "proposed",
+      "confidence": "med",
+      "path": "tools\\TL-sendgrid.md"
+    },
+    {
+      "id": "TL-ses",
+      "type": "Tool",
+      "title": "Amazon SES",
+      "status": "proposed",
+      "confidence": "high",
+      "path": "tools\\TL-ses.md"
+    },
+    {
+      "id": "TST-0101",
+      "type": "Test",
+      "title": "Password reset happy-path and expiry",
+      "status": "failing",
+      "confidence": "high",
+      "path": "tests\\TST-0101.md"
+    },
+    {
+      "id": "US-001",
+      "type": "UserStory",
+      "title": "A returning user who forgot their password can regain access",
+      "status": "accepted",
+      "confidence": "high",
+      "path": "stories\\US-001.md"
+    }
+  ],
+  "edges": [
+    {
+      "from": "CAP-email",
+      "edge": "needs_tool",
+      "to": "TL-ses"
+    },
+    {
+      "from": "CAP-email",
+      "edge": "needs_tool",
+      "to": "TL-sendgrid"
+    },
+    {
+      "from": "Q-0005",
+      "edge": "blocks",
+      "to": "R-0042"
+    },
+    {
+      "from": "R-0042",
+      "edge": "derived_from",
+      "to": "US-001"
+    },
+    {
+      "from": "RK-0002",
+      "edge": "threatens",
+      "to": "R-0042"
+    },
+    {
+      "from": "RK-0002",
+      "edge": "mitigated_by",
+      "to": "T-0102"
+    },
+    {
+      "from": "T-0101",
+      "edge": "satisfies",
+      "to": "R-0042"
+    },
+    {
+      "from": "T-0101",
+      "edge": "uses_tool",
+      "to": "TL-ses"
+    },
+    {
+      "from": "T-0102",
+      "edge": "satisfies",
+      "to": "R-0042"
+    },
+    {
+      "from": "T-0102",
+      "edge": "depends_on",
+      "to": "T-0101"
+    },
+    {
+      "from": "TL-sendgrid",
+      "edge": "provides",
+      "to": "CAP-email"
+    },
+    {
+      "from": "TL-sendgrid",
+      "edge": "alternative_to",
+      "to": "TL-ses"
+    },
+    {
+      "from": "TL-ses",
+      "edge": "provides",
+      "to": "CAP-email"
+    },
+    {
+      "from": "TL-ses",
+      "edge": "alternative_to",
+      "to": "TL-sendgrid"
+    },
+    {
+      "from": "TST-0101",
+      "edge": "verifies",
+      "to": "R-0042"
+    }
+  ],
+  "stats": {
+    "total": 10,
+    "by_type": {
+      "Capability": 1,
+      "Question": 1,
+      "Requirement": 1,
+      "Risk": 1,
+      "Task": 2,
+      "Test": 1,
+      "Tool": 2,
+      "UserStory": 1
+    }
+  }
+}

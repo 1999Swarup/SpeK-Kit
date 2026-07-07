@@ -1,0 +1,35 @@
+{
+  "A_requirement_understanding": {
+    "ambiguity_score_pct": 100.0,
+    "requirement_drift_count": 0,
+    "requirements": 1
+  },
+  "B_traceability": {
+    "trace_coverage_pct": 100.0,
+    "orphan_rate_pct": 0.0,
+    "broken_link_count": 0
+  },
+  "C_execution_efficiency": {
+    "task_rework_rate_pct": 0.0,
+    "tasks": 2
+  },
+  "D_loop_effectiveness": {
+    "learning_capture_rate_pct": null,
+    "loop_iterations": 0,
+    "nodes_changed_by_loops": 0,
+    "lessons_recorded": 0
+  },
+  "E_cognitive_load": {
+    "files_per_requirement": 10.0,
+    "avg_sections_per_file": 1.5,
+    "max_sections_in_a_file": 4
+  },
+  "F_ai_effectiveness": {
+    "context_completeness_pct": 90.0
+  },
+  "G_enterprise_readiness": {
+    "compliance_coverage_pct": 100.0,
+    "audit_integration_nodes": 2,
+    "graph_edges": 15
+  }
+}

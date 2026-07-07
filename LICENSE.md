@@ -1,0 +1,12 @@
+# License
+
+SpeK-Kit is dual-licensed. You may use, at your option, either of:
+
+- **MIT License** — see [LICENSE-MIT](LICENSE-MIT)
+- **Apache License, Version 2.0** — see [LICENSE-APACHE](LICENSE-APACHE)
+
+`SPDX-License-Identifier: MIT OR Apache-2.0`
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this project by you, as defined in the Apache-2.0 license, shall
+be dual-licensed as above, without any additional terms or conditions.

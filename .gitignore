@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# SpeK-Kit generated artifacts are committed intentionally (graph.json, index.md,
+# metrics.json) so reviewers can see the graph without running the engine.
+# If you prefer to regenerate them, uncomment:
+# **/graph.json
+# **/metrics.json
