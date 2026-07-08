@@ -11,7 +11,17 @@ intelligence into `/skgdd.specify`, `/skgdd.plan`, and `/skgdd.analyze`.
 | `PACK-security` | Secure development (OWASP-aligned) | `/skgdd.pack security` |
 | `PACK-data` | Data modeling, storage, privacy | `/skgdd.pack data` |
 | `PACK-frontend` | Accessibility, performance, UI arch | `/skgdd.pack frontend` |
-| `PACK-dynamics365` | Dynamics 365 / Dataverse | `/skgdd.pack dynamics365` |
+| `PACK-dynamics365` | Dynamics 365 / Dataverse (ships a tool library + ALM lifecycle) | `/skgdd.pack dynamics365` |
+
+## The Dynamics 365 pack ships a tool library
+
+`PACK-dynamics365` is enriched beyond guidance: it includes ready-made
+`Capability` and `Tool` nodes under `dynamics365/capabilities/` and
+`dynamics365/tools/`, mapped to the skills available in this workspace
+(`dv-metadata`/`dv-data`/`dv-query`, `dv-solution`/PAC CLI, Power Automate,
+plugins, business rules, Copilot Studio `author`). Copy the ones you use into your
+requirement bundle so `/skgdd.tools` ranks real, backed options and the ALM
+lifecycle (`stage` → DEV/TEST/PROD) is explicit.
 
 ## Runtime behaviour
 
